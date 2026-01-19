@@ -1,0 +1,13 @@
+name: Bug label action
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  bug-job:
+    runs-on: ubuntu-latest
+    if: github.event.label.name == 'bug'
+    steps:
+      - name: Azione su bug
+        run: echo "È stato segnalato un BUG!"
